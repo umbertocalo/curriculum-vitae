@@ -71,8 +71,7 @@ Contributed to the definition of the target data center architecture, including 
 
 The project involved the evaluation and integration of modern data center technologies, including Cisco ACI-based networking, Nexus Dashboard Orchestrator, enterprise storage platforms, virtualization environments, and replication technologies to deliver a resilient and scalable DR architecture.
 
-**Tags**:
-#DataCenter #DisasterRecovery #DR #Greenfield #Architecture #SolutionDesign #CiscoACI #NexusDashboardOrchestrator #CiscoUCS #CiscoMDS #HPE #Synergy #Dell #PowerEdge #PowerStore #VPLEX #PureStorage #VMware #Zerto #SAN #FibreChannel #EnterpriseInfrastructure #year2026
+**Tags**: #DataCenter #DisasterRecovery #DR #Greenfield #Architecture #SolutionDesign #CiscoACI #NexusDashboardOrchestrator #CiscoUCS #CiscoMDS #HPE #Synergy #Dell #PowerEdge #PowerStore #VPLEX #PureStorage #VMware #Zerto #SAN #FibreChannel #EnterpriseInfrastructure #year2026
 
 ---
 
