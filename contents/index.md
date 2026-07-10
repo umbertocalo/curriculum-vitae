@@ -1,6 +1,6 @@
 ---
 title: Curriculm Vitae
-layout: home
+layout: default
 project: cv
 author: Umberto Calò
 tags:
@@ -71,8 +71,7 @@ Contributed to the definition of the target data center architecture, including 
 
 The project involved the evaluation and integration of modern data center technologies, including Cisco ACI-based networking, Nexus Dashboard Orchestrator, enterprise storage platforms, virtualization environments, and replication technologies to deliver a resilient and scalable DR architecture.
 
-**Tags**:
-#DataCenter #DisasterRecovery #DR #Greenfield #Architecture #SolutionDesign #CiscoACI #NexusDashboardOrchestrator #CiscoUCS #CiscoMDS #HPE #Synergy #Dell #PowerEdge #PowerStore #VPLEX #PureStorage #VMware #Zerto #SAN #FibreChannel #EnterpriseInfrastructure #year2026
+**Tags**: #DataCenter #DisasterRecovery #DR #Greenfield #Architecture #SolutionDesign #CiscoACI #NexusDashboardOrchestrator #CiscoUCS #CiscoMDS #HPE #Synergy #Dell #PowerEdge #PowerStore #VPLEX #PureStorage #VMware #Zerto #SAN #FibreChannel #EnterpriseInfrastructure #year2026
 
 ---
 
@@ -86,8 +85,7 @@ Performed the assessment and migration planning of one of the customer's primary
 
 Collaborated with infrastructure, application, networking, storage, virtualization, and migration teams to map dependencies, validate technical requirements, and support the development of the migration runbook. The project involved enterprise compute platforms, storage systems, SAN fabrics, and virtualization environments, requiring coordination across multiple technology layers to ensure service continuity during migration activities.
 
-**Tags**:
-#DataCenter #DataCenterMigration #CiscoUCS #CiscoMDS #HPE #Alletra #Synergy #PureStorage #Dell #VxBlock #VMware #ESXi #vCenter #SAN #FibreChannel #Storage #Virtualization #InfrastructureArchitecture #year2025
+**Tags**: #DataCenter #DataCenterMigration #CiscoUCS #CiscoMDS #HPE #Alletra #Synergy #PureStorage #Dell #VxBlock #VMware #ESXi #vCenter #SAN #FibreChannel #Storage #Virtualization #InfrastructureArchitecture #year2025
 
 ---
 
@@ -101,8 +99,7 @@ Designed and implemented a custom automation platform to support the customer's 
 
 Implemented the platform using Docker and Docker Compose, with Traefik providing reverse proxy capabilities for containerized services. The solution established the foundation for future network automation workflows, configuration management, and infrastructure lifecycle processes.
 
-**Tags:**  
-#Python #Automation #NetworkAutomation #NetDevOps #DevOps #Docker #DockerCompose #NetBox #Gitea #Jenkins #Traefik #RESTAPI #Cisco #Meraki #InfrastructureAsCode #year2025
+**Tags**: #Python #Automation #NetworkAutomation #NetDevOps #DevOps #Docker #DockerCompose #NetBox #Gitea #Jenkins #Traefik #RESTAPI #Cisco #Meraki #InfrastructureAsCode #year2025
 
 ---
 
@@ -116,8 +113,7 @@ Developed a custom monitoring and reporting solution to collect and visualize ke
 
 The solution provided centralized visibility across distributed Meraki environments, improving operational awareness and enabling data-driven infrastructure management.
 
-**Tags:**  
-#Python #Automation #Cisco #Meraki #API #RESTAPI #Monitoring #KPI #Dashboard #DataAnalytics #NetworkVisibility #NetworkManagement #year2024
+**Tags**: #Python #Automation #Cisco #Meraki #API #RESTAPI #Monitoring #KPI #Dashboard #DataAnalytics #NetworkVisibility #NetworkManagement #year2024
 
 ---
 
@@ -131,8 +127,7 @@ Supported enterprise campus transformation initiatives focused on network modern
 
 Participated in the design and Proof of Concept activities for Cisco SD-Access, evaluating software-defined networking capabilities and their applicability within the customer's campus architecture.
 
-**Tags:**  
-#Cisco #CatalystCenter #SDAccess #SDN #ThousandEyes #CampusNetworking #NetworkAutomation #NetworkVisibility #Observability #EnterpriseNetworking #HighAvailability #year2023
+**Tags**: #Cisco #CatalystCenter #SDAccess #SDN #ThousandEyes #CampusNetworking #NetworkAutomation #NetworkVisibility #Observability #EnterpriseNetworking #HighAvailability #year2023
 
 ---
 
@@ -146,8 +141,7 @@ Supported the customer's Architecture, Capacity Management, and Project Delivery
 
 Led the transition of a Cisco Meraki SD-WAN solution from Proof of Concept to production, coordinating technical validation, deployment planning, implementation activities, HLD/LLD documentation, vendor coordination, and operational handover. The project delivered secure connectivity for approximately 25 remote locations, including retail offices and executive home offices, and established the operational processes for long-term service support.
 
-**Tags:**  
-#Cisco #Meraki #SDWAN #Azure #AWS #GCP #Cloud #Terraform #IaC #GitLab #Architecture #HLD #LLD #NetworkDesign #EnterpriseNetworking #year2022
+**Tags**: #Cisco #Meraki #SDWAN #Azure #AWS #GCP #Cloud #Terraform #IaC #GitLab #Architecture #HLD #LLD #NetworkDesign #EnterpriseNetworking #year2022
 
 ---
 
@@ -159,8 +153,7 @@ Led the transition of a Cisco Meraki SD-WAN solution from Proof of Concept to pr
 
 As part of the international NTT delivery team, contributed to the implementation, validation, and operational support of the network infrastructure for UEFA EURO 2020 at the Rome Olympic Stadium. Participated in the deployment and testing of the event network before the tournament and provided operational support throughout the competition, ensuring service availability during live match broadcasts and mission-critical event operations in coordination with international engineering teams.
 
-**Tags:**  
-#Cisco #Networking #LAN #WAN #Routing #Switching #Wireless #NetworkOperations #EnterpriseNetworking #SportsEvents #year2021
+**Tags**: #Cisco #Networking #LAN #WAN #Routing #Switching #Wireless #NetworkOperations #EnterpriseNetworking #SportsEvents #year2021
 
 ---
 
@@ -184,8 +177,7 @@ Cisco certifications covering enterprise networking, data center infrastructure,
 - Cisco CCNA Routing and Switching (CCNA R&S - 200-125) - Jan 2020
 - Cisco IT Essentials - May 201
 
-**Tags**:
-#Cisco #EnterpriseNetworking #Routing #Switching #DataCenter  #UCS #Automation #DevNet #AIInfrastructure
+**Tags**: #Cisco #EnterpriseNetworking #Routing #Switching #DataCenter  #UCS #Automation #DevNet #AIInfrastructure
 
 ---
 
@@ -198,8 +190,7 @@ Foundation knowledge of Microsoft Azure cloud services, governance, security, an
 - Cloud Champion Italy - Microsoft Azure Technical Qualified - Feb 2021
 - Microsoft Certified: Azure Fundamentals (AZ-900) - Jun 2020
 
-**Tags**:
-#Microsoft #Azure #Cloud #AZ900 #CloudFundamentals
+**Tags**: #Microsoft #Azure #Cloud #AZ900 #CloudFundamentals
 
 ---
 
@@ -212,8 +203,7 @@ Enterprise storage administration, deployment, and lifecycle management for ONTA
 - NCDE, NSO-184 | NetApp Certified Storage Installation Engineer, ONTAP | Apr 2025
 - NCDA, NSO-162 | NetApp Certified Data Administrator, ONTAP | Dec 2023
 
-**Tags**:
-#NetApp #ONTAP #Storage #NAS #SAN #EnterpriseStorage #DataManagement
+**Tags**: #NetApp #ONTAP #Storage #NAS #SAN #EnterpriseStorage #DataManagement
 
 ---
 
