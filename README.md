@@ -1,5 +1,6 @@
 ---
 title: Curriculm Vitae
+theme: just-the-docs
 layout: default
 project: cv
 author: Umberto Calò
