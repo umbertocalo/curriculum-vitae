@@ -27,7 +27,7 @@ bundle exec jekyll serve
 Tutto vive in `_data/`:
 
 | File | Contenuto |
-|---|---|
+| --- | --- |
 | `profile.yml` | nome, ruolo, bio, contatti |
 | `skills.yml` | competenze raggruppate per area |
 | `experience.yml` | esperienze lavorative (roles annidati per azienda) |
@@ -35,7 +35,7 @@ Tutto vive in `_data/`:
 | `certifications.yml` | certificazioni raggruppate per vendor |
 | `education.yml` | formazione |
 
-Le `description` supportano Markdown (usa `- ` per liste puntate reali).
+Le `description` supportano Markdown (usa `-` per liste puntate reali).
 
 ## Personalizzare tema e colore
 
@@ -49,7 +49,7 @@ Incluso un workflow GitHub Actions (`.github/workflows/deploy.yml`) che builda
 e pubblica su GitHub Pages ad ogni push su `main`. Attivalo da:
 `Settings → Pages → Source: GitHub Actions`.
 
-In alternativa, funziona anche su Netlify: build command `bundle exec jekyll build`,
+In alternativa, funziona anche su Netlify/Cloudflare Pages: build command `bundle exec jekyll build`,
 publish directory `_site`.
 
 ## Roadmap (ordine consigliato)
@@ -71,4 +71,4 @@ publish directory `_site`.
 ## Licenza contenuti terzi
 
 La palette colore Flexoki è di Steph Ango, rilasciata con licenza MIT
-(https://github.com/kepano/flexoki). Attribuzione mantenuta nei commenti SCSS.
+(<https://github.com/kepano/flexoki>). Attribuzione mantenuta nei commenti SCSS.

@@ -4,7 +4,7 @@
   role: "Data Center Engineer"
   description: >
     Comprehensive assessment of the customer's primary data centers to design a new greenfield Disaster Recovery infrastructure, including compute, storage, virtualization, network fabric, SAN and DR workflows.
-  tags: ["Cisco ACI", "Cisco UCS", "VMware", "Zerto", "SAN"]
+  tags: ["Cisco UCS", "Cisco MDS", "Cisco ACI", "Cisco Nexus Dashboard Orchestrator", "HPE Synergy", "Dell PowerEdge", "Dell Unity", "Dell PowerStore", "Dell VPLEX", "Pure Storage", "VMware ESXi", "VMware vCenter", "Fibre Channel", "SAN Zoning", "Zerto"]
 
 - year: 2025
   title: "Enterprise Data Center Assessment & Migration"
@@ -12,7 +12,7 @@
   role: "Data Center Engineer"
   description: >
     Assessment and migration planning of one of the customer's primary data centers, analyzing existing architecture, technology stack, dependencies and operational workflows.
-  tags: ["Cisco UCS", "HPE", "Pure Storage", "VMware", "SAN"]
+  tags: ["Cisco UCS", "Cisco MDS", "HPE Synergy", "HPE Alletra", "Pure Storage FlashArray", "Dell Unity", "Dell VxBlock", "VMware ESXi", "VMware vCenter", "Fibre Channel", "SAN Zoning"]
 
 - year: 2025
   title: "Network Automation Platform & NetDevOps Enablement"
@@ -20,7 +20,7 @@
   role: "Network Automation Engineer"
   description: >
     Designed and implemented a custom automation platform: containerized environment with segregated NetBox instances, Git-based automation with Gitea and Jenkins, and a custom KPI dashboard behind Traefik.
-  tags: ["Python", "Docker", "NetBox", "Gitea", "Jenkins", "Traefik"]
+  tags: ["Python", "Docker", "Docker Compose", "NetBox", "Gitea", "Jenkins", "Traefik", "Cisco Meraki API"]
 
 - year: 2024
   title: "Cisco Meraki Infrastructure KPI Tracking Platform"
@@ -28,7 +28,7 @@
   role: "Network Automation Engineer"
   description: >
     Custom monitoring and reporting solution to collect and visualize KPIs across multiple Cisco Meraki organizations: device inventory, licensing, connected clients, guest users and bandwidth utilization.
-  tags: ["Python", "REST API", "Meraki", "Monitoring"]
+  tags: ["Python", "REST APIs", "Cisco Meraki Dashboard API", "Data Processing", "Visualization"]
 
 - year: 2023
   title: "Enterprise Campus Transformation & Catalyst Center Adoption"
@@ -36,7 +36,7 @@
   role: "Network Engineer (Staff Augmentation)"
   description: >
     Supported campus transformation initiatives: ThousandEyes for application visibility, migration of Catalyst Center from single-node to a three-node HA cluster, and SD-Access design/PoC activities.
-  tags: ["Catalyst Center", "SD-Access", "ThousandEyes"]
+  tags: ["Catalyst Center", "SD-Access", "ThousandEyes", "Campus Networking"]
 
 - year: 2022
   title: "Enterprise Cloud Transformation & SD-WAN Delivery"
@@ -44,7 +44,7 @@
   role: "Network Engineer (Staff Augmentation)"
   description: >
     Contributed to enterprise network and cloud architectures across Azure, AWS and GCP with Terraform and GitLab. Led the transition of a Cisco Meraki SD-WAN solution from PoC to production for ~25 remote locations.
-  tags: ["Azure", "AWS", "GCP", "Terraform", "SD-WAN"]
+  tags: ["Azure", "AWS", "GCP", "Terraform", "GitLab", "Cisco Enterprise", "Cisco Meraki SD-WAN"]
 
 - year: 2021
   title: "UEFA EURO 2020 — Stadium Network Operations"
@@ -52,4 +52,4 @@
   role: "Network Implementation & Operations Engineer"
   description: >
     Contributed to implementation, validation and operational support of the network infrastructure at the Rome Olympic Stadium, ensuring service availability during live match broadcasts.
-  tags: ["Cisco", "LAN/WAN", "Network Operations"]
+  tags: ["Cisco Enterprise Networking", "LAN", "WAN", "Routing & Switching", "Wireless", "Network Operations"]
