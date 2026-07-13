@@ -1,0 +1,24 @@
+- vendor: "Cisco"
+  focus: "Enterprise Networking, Data Center, Automation and AI Infrastructure"
+  items:
+    - "Cisco Black Belt - SecureAI Factory Pre-Sales Stage 1 (Partners only) — Jul 2026"
+    - "AI Solutions on Cisco Infrastructure Essential — May 2025"
+    - "Cisco Black Belt - Intersight Deployment Stage 1, 2 and 3 (Partners only) — Jul 2023"
+    - "Cisco Black Belt - UCS Deployment Stage 1, 2 and 3 (Partners only) — Mar 2023"
+    - "Cisco CCNP Data Center — Mar 2022"
+    - "Cisco Certified Specialist - Data Center Core (DCCOR 350-601) — Mar 2022"
+    - "Cisco Certified DevNet Specialist - DC Automation (DCAUTO 300-635) — Jun 2021"
+    - "Cisco CCNA Routing and Switching (200-125) — Jan 2020"
+    - "Cisco IT Essentials — May 2019"
+
+- vendor: "Microsoft"
+  focus: "Cloud Fundamentals"
+  items:
+    - "Cloud Champion Italy - Microsoft Azure Technical Qualified — Feb 2021"
+    - "Microsoft Certified: Azure Fundamentals (AZ-900) — Jun 2020"
+
+- vendor: "NetApp"
+  focus: "Enterprise Storage & Data Management"
+  items:
+    - "NCDE, NSO-184 — NetApp Certified Storage Installation Engineer, ONTAP — Apr 2025"
+    - "NCDA, NSO-162 — NetApp Certified Data Administrator, ONTAP — Dec 2023"

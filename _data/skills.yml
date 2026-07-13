@@ -1,0 +1,11 @@
+- group: "Networking"
+  items: ["Enterprise Networking", "Cisco Nexus", "Cisco Catalyst Center", "SD-Access", "Meraki SD-WAN", "ThousandEyes"]
+
+- group: "Data Center"
+  items: ["Cisco UCS", "Cisco MDS", "Fibre Channel", "VMware", "Pure Storage", "NetApp ONTAP", "HPE Alletra"]
+
+- group: "Cloud"
+  items: ["Azure", "AWS", "GCP", "Terraform"]
+
+- group: "Automation"
+  items: ["Python", "Ansible", "Git", "Jenkins", "NetBox", "REST API"]

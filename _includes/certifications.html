@@ -1,0 +1,10 @@
+<h2>Certifications and Studies</h2>
+{% for cert in site.data.certifications %}
+  <div class="entry">
+    <h3>{{ cert.vendor }}</h3>
+    <p class="entry-sub">{{ cert.focus }}</p>
+    <ul>
+      {% for item in cert.items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+{% endfor %}

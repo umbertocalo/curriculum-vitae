@@ -1,0 +1,14 @@
+<h2>Projects</h2>
+{% for p in site.data.projects %}
+  <div class="entry">
+    <div class="entry-head">
+      <h3>{{ p.title }}</h3>
+      <time class="meta">{{ p.year }}</time>
+    </div>
+    <p class="entry-sub">{{ p.customer }} — {{ p.role }}</p>
+    {{ p.description | markdownify }}
+    <p class="tag-list">
+      {% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+    </p>
+  </div>
+{% endfor %}

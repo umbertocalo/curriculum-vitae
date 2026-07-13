@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+{% include head.html %}
+<body>
+  <div class="wrap">
+    {% include header.html %}
+    <main>
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+title: "Umberto Calo"
+url: "https://umbertocalo.dpdns.org"
+lang: "it"
+default_accent: "blue"   # blue | orange | green | red
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

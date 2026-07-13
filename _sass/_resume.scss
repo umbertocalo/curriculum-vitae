@@ -1,0 +1,22 @@
+.entry { margin-bottom: var(--space-3); }
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+}
+.entry-head h3 { margin: 0; }
+
+.entry-company {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-2);
+}
+
+.entry-sub {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  margin: 0 0 0.4rem;
+}

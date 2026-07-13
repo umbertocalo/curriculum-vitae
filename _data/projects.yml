@@ -1,0 +1,55 @@
+- year: 2026
+  title: "Greenfield Disaster Recovery Data Center Design"
+  customer: "Leading Defense Industry Company"
+  role: "Data Center Engineer"
+  description: >
+    Comprehensive assessment of the customer's primary data centers to design a new greenfield Disaster Recovery infrastructure, including compute, storage, virtualization, network fabric, SAN and DR workflows.
+  tags: ["Cisco ACI", "Cisco UCS", "VMware", "Zerto", "SAN"]
+
+- year: 2025
+  title: "Enterprise Data Center Assessment & Migration"
+  customer: "Leading Transportation Company"
+  role: "Data Center Engineer"
+  description: >
+    Assessment and migration planning of one of the customer's primary data centers, analyzing existing architecture, technology stack, dependencies and operational workflows.
+  tags: ["Cisco UCS", "HPE", "Pure Storage", "VMware", "SAN"]
+
+- year: 2025
+  title: "Network Automation Platform & NetDevOps Enablement"
+  customer: "Enterprise Manufacturing & Retail Company"
+  role: "Network Automation Engineer"
+  description: >
+    Designed and implemented a custom automation platform: containerized environment with segregated NetBox instances, Git-based automation with Gitea and Jenkins, and a custom KPI dashboard behind Traefik.
+  tags: ["Python", "Docker", "NetBox", "Gitea", "Jenkins", "Traefik"]
+
+- year: 2024
+  title: "Cisco Meraki Infrastructure KPI Tracking Platform"
+  customer: "Enterprise Manufacturing & Retail Company"
+  role: "Network Automation Engineer"
+  description: >
+    Custom monitoring and reporting solution to collect and visualize KPIs across multiple Cisco Meraki organizations: device inventory, licensing, connected clients, guest users and bandwidth utilization.
+  tags: ["Python", "REST API", "Meraki", "Monitoring"]
+
+- year: 2023
+  title: "Enterprise Campus Transformation & Catalyst Center Adoption"
+  customer: "Leading Media & Entertainment Company"
+  role: "Network Engineer (Staff Augmentation)"
+  description: >
+    Supported campus transformation initiatives: ThousandEyes for application visibility, migration of Catalyst Center from single-node to a three-node HA cluster, and SD-Access design/PoC activities.
+  tags: ["Catalyst Center", "SD-Access", "ThousandEyes"]
+
+- year: 2022
+  title: "Enterprise Cloud Transformation & SD-WAN Delivery"
+  customer: "Leading Oil & Gas Company"
+  role: "Network Engineer (Staff Augmentation)"
+  description: >
+    Contributed to enterprise network and cloud architectures across Azure, AWS and GCP with Terraform and GitLab. Led the transition of a Cisco Meraki SD-WAN solution from PoC to production for ~25 remote locations.
+  tags: ["Azure", "AWS", "GCP", "Terraform", "SD-WAN"]
+
+- year: 2021
+  title: "UEFA EURO 2020 — Stadium Network Operations"
+  customer: "UEFA"
+  role: "Network Implementation & Operations Engineer"
+  description: >
+    Contributed to implementation, validation and operational support of the network infrastructure at the Rome Olympic Stadium, ensuring service availability during live match broadcasts.
+  tags: ["Cisco", "LAN/WAN", "Network Operations"]

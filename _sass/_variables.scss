@@ -1,0 +1,77 @@
+// Palette "Flexoki" di Steph Ango (stephango.com/flexoki) — MIT license
+
+:root {
+  --flexoki-black: #100F0F;
+  --flexoki-950:   #1C1B1A;
+  --flexoki-900:   #282726;
+  --flexoki-850:   #343331;
+  --flexoki-800:   #403E3C;
+  --flexoki-700:   #575653;
+  --flexoki-600:   #6F6E69;
+  --flexoki-500:   #878580;
+  --flexoki-300:   #B7B5AC;
+  --flexoki-200:   #CECDC3;
+  --flexoki-150:   #DAD8CE;
+  --flexoki-100:   #E6E4D9;
+  --flexoki-50:    #F2F0E5;
+  --flexoki-paper: #FFFCF0;
+
+  --blue-600:   #205EA6; --blue-400:   #4385BE;
+  --orange-600: #BC5215; --orange-400: #DA702C;
+  --green-600:  #66800B; --green-400:  #879A39;
+  --red-600:    #AF3029; --red-400:    #D14D41;
+
+  --font-serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius: 3px;
+  --measure: 42rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+}
+
+// --- tema chiaro/scuro ---
+:root, [data-theme="light"] {
+  --bg: var(--flexoki-paper);
+  --bg-soft: var(--flexoki-50);
+  --border: var(--flexoki-100);
+  --text: var(--flexoki-black);
+  --text-muted: var(--flexoki-600);
+  --text-faint: var(--flexoki-500);
+  --tag-bg: var(--flexoki-50);
+  --tag-text: var(--flexoki-700);
+}
+[data-theme="dark"] {
+  --bg: var(--flexoki-black);
+  --bg-soft: var(--flexoki-950);
+  --border: var(--flexoki-900);
+  --text: var(--flexoki-100);
+  --text-muted: var(--flexoki-300);
+  --text-faint: var(--flexoki-500);
+  --tag-bg: var(--flexoki-900);
+  --tag-text: var(--flexoki-200);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: var(--flexoki-black);
+    --bg-soft: var(--flexoki-950);
+    --border: var(--flexoki-900);
+    --text: var(--flexoki-100);
+    --text-muted: var(--flexoki-300);
+    --text-faint: var(--flexoki-500);
+    --tag-bg: var(--flexoki-900);
+    --tag-text: var(--flexoki-200);
+  }
+}
+
+// --- accent color: data-accent="blue|orange|green|red" sull'html ---
+// il valore 600 per light, 400 per dark, come da spec Flexoki
+:root, [data-theme="light"] { --accent: var(--blue-600); }
+[data-theme="dark"] { --accent: var(--blue-400); }
+
+@each $name in blue, orange, green, red {
+  [data-accent="#{$name}"] { --accent: var(--#{$name}-600); }
+  [data-theme="dark"][data-accent="#{$name}"] { --accent: var(--#{$name}-400); }
+}

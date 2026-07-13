@@ -1,0 +1,25 @@
+- company: "NTT Data"
+  location: "Milan"
+  roles:
+    - title: "Senior Associate Systems Integration Specialist"
+      period: "2025 - Present"
+      description: >
+        - Contributing to the design and delivery of enterprise networking, data center, cloud and automation solutions for strategic customers, from assessment through implementation and operational handover.
+
+        - Working on large-scale data center transformation initiatives, including enterprise data center migrations and greenfield Disaster Recovery infrastructure design.
+
+        - Taking part in network automation initiatives, developing Python-based solutions integrating CMDBs, configuration management, compliance validation and monitoring.
+
+    - title: "L2 Technical Services Implementation Engineer"
+      period: "2022 - 2025"
+      description: >
+        - Delivered design, implementation and operational support for enterprise networking, data center and cloud infrastructures.
+
+        - Specialized in compute, storage, virtualization and cloud technologies, supporting a major customer's cloud transformation across Azure, GCP and AWS.
+
+        - Led end-to-end delivery of a Cisco Meraki SD-WAN rollout across ~50 retail sites.
+
+    - title: "L1 Technical Services Implementation Engineer"
+      period: "2019 - 2022"
+      description: >
+        - Supported deployment, configuration, testing and acceptance of enterprise networking and data center infrastructures across a wide range of customer environments, from single-device installations to multi-day infrastructure upgrades.

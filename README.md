@@ -1,78 +1,74 @@
-# Curriculum Vitae – Umberto Calò
+# resume-site
 
-CV online costruito con [Quartz](https://quartz.jzhao.xyz/), generatore di siti statici in stile Obsidian, pubblicato tramite Cloudflare Pages.
+Tema Jekyll custom per CV/portfolio personale. Ispirato alla tipografia e alla
+palette di [stephango.com](https://stephango.com) (Flexoki, MIT) e alla
+struttura "homepage = curriculum" di [davidepucci.it/resume](https://davidepucci.it/resume/).
 
-🔗 **Sito live:** https://umbertocalo.dpdns.org
+## Filosofia
 
-> Versione alternativa basata su MkDocs disponibile nel repo [`pvt-curriculum-vitae`](https://github.com/umbertocalo/pvt-curriculum-vitae), release `v1.0.0`.
+- **Contenuti in `_data/*.yml`**, mai nell'HTML: aggiorni il CV senza toccare i template.
+- **Template Liquid minimi e modulari**: ogni sezione è un include indipendente.
+- **SCSS diviso per responsabilità**, sotto le 500 righe totali.
+- **Una sola dipendenza JS**: il toggle dark/light (nessun framework).
+- Nessuna card, nessun box: solo tipografia e whitespace.
 
-## Stack
+## Setup locale
 
-- **Quartz** – generatore di siti statici da Markdown, stile Obsidian (wikilink, tag, ricerca, graph view)
-- **Node.js / TypeScript**
-- **Cloudflare Pages** – hosting e deploy automatico da GitHub
-
-## Struttura del progetto
-
-```
-.
-├── quartz.config.ts     # configurazione del sito (titolo, tema, colori, plugin)
-├── quartz.layout.ts      # layout delle pagine
-├── content/
-│   └── index.md           # contenuto del CV
-└── quartz/                 # core di Quartz (non modificare direttamente)
-```
-
-## Sviluppo in locale
-
-Requisiti: Node.js >= 22, npm >= 10.9.2
+Richiede Ruby ≥ 3.1.
 
 ```bash
-# Clona il repository
-git clone https://github.com/umbertocalo/quartz-curriculum-vitae.git
-cd quartz-curriculum-vitae
-
-# Installa le dipendenze
-npm i
-
-# Installa i plugin referenziati dal template scelto
-npx quartz plugin install --from-config
-
-# Avvia il server di anteprima locale con hot-reload
-npx quartz build --serve
+bundle install
+bundle exec jekyll serve
+# apri http://localhost:4000
 ```
 
-Il sito sarà disponibile su `http://localhost:8080`.
+## Aggiornare i contenuti
 
-## Build
+Tutto vive in `_data/`:
 
-```bash
-npx quartz build
-```
+| File | Contenuto |
+|---|---|
+| `profile.yml` | nome, ruolo, bio, contatti |
+| `skills.yml` | competenze raggruppate per area |
+| `experience.yml` | esperienze lavorative (roles annidati per azienda) |
+| `projects.yml` | progetti, uno per voce |
+| `certifications.yml` | certificazioni raggruppate per vendor |
+| `education.yml` | formazione |
 
-I file statici verranno generati nella cartella `public/`.
+Le `description` supportano Markdown (usa `- ` per liste puntate reali).
+
+## Personalizzare tema e colore
+
+- Dark/light: bottone in header, oppure tasto `d` da tastiera. Persistito in `localStorage`.
+- Accent color: in `_config.yml`, chiave `default_accent` → `blue | orange | green | red`.
+  Per aggiungerne uno nuovo, basta un blocco in `_sass/_variables.scss`.
 
 ## Deploy
 
-Il deploy è automatico: ogni push sul branch `main` triggera una build su **Cloudflare Pages**.
+Incluso un workflow GitHub Actions (`.github/workflows/deploy.yml`) che builda
+e pubblica su GitHub Pages ad ogni push su `main`. Attivalo da:
+`Settings → Pages → Source: GitHub Actions`.
 
-**Configurazione build su Cloudflare Pages:**
+In alternativa, funziona anche su Netlify: build command `bundle exec jekyll build`,
+publish directory `_site`.
 
-| Impostazione | Valore |
-|---|---|
-| Build command | `npx quartz build` |
-| Build output directory | `public` |
-| Root directory | `/` |
-| Variabile ambiente | `NODE_VERSION=22` |
+## Roadmap (ordine consigliato)
 
-## Modifica del contenuto
+1. ✅ Homepage / Resume
+2. ✅ Projects
+3. ✅ Certifications
+4. Blog tecnico (`_posts/`, layout `post.html`)
+5. Notes stile digital garden (`notes/`, eventuali backlink)
+6. Search
+7. Tag pages
+8. Feed RSS/Atom (`jekyll-feed` già incluso nel Gemfile)
+9. Sitemap (`jekyll-sitemap` già incluso)
+10. SEO tag (`jekyll-seo-tag` già incluso)
+11. Mermaid per diagrammi
+12. PrismJS per syntax highlighting nel blog
+13. KaTeX se serve notazione matematica
 
-Il contenuto del CV si trova in [`content/index.md`](content/index.md), con tag inline stile Obsidian (es. `#DataCenter #CiscoUCS`) e frontmatter YAML. Aggiornalo, fai commit e push: il sito si aggiorna automaticamente.
+## Licenza contenuti terzi
 
-## Licenza e utilizzo
-
-Questo repository contiene contenuti personali (curriculum vitae). Il codice di configurazione (quartz.config.ts, ecc.) è liberamente riutilizzabile; i contenuti testuali sono © Umberto Calò.
-
----
-
-📧 [umbertocalo09@gmail.com](mailto:umbertocalo09@gmail.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/umbertocalo) · 💻 [GitHub](https://www.github.com/umbertocalo)
+La palette colore Flexoki è di Steph Ango, rilasciata con licenza MIT
+(https://github.com/kepano/flexoki). Attribuzione mantenuta nei commenti SCSS.

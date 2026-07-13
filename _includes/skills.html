@@ -1,0 +1,5 @@
+<p class="tag-list">
+  {% for group in site.data.skills %}
+    {% for item in group.items %}<span class="tag">{{ item }}</span>{% endfor %}
+  {% endfor %}
+</p>
