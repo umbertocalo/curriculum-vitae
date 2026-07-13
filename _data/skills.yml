@@ -2,10 +2,10 @@
   items: ["Enterprise Networking", "Cisco Nexus", "Cisco Catalyst Center", "SD-Access", "Meraki SD-WAN", "ThousandEyes", "LAN", "WAN", "Routing & Switching", "Wireless"]
 
 - group: "Data Center"
-  items: ["Cisco UCS", "Cisco MDS", "Fibre Channel", "VMware", "Pure Storage", "NetApp ONTAP", "HPE Alletra", "HPE Synergy", "Dell PowerEdge", "Dell Unity", "Dell PowerStore", "Dell VPLEX", "Zerto"]
+  items: ["Cisco UCS", "Cisco MDS", "Fibre Channel", "VMware", "Pure Storage", "NetApp ONTAP", "HPE Alletra", "HPE Synergy", "Dell PowerEdge", "Dell Unity", "Dell PowerStore", "Dell VPLEX"]
 
 - group: "Cloud"
   items: ["Azure", "AWS", "GCP", "Terraform"]
 
 - group: "Automation"
-  items: ["Python", "Ansible", "Git", "Jenkins", "NetBox", "REST API", "Docker", "Docker Compose", "Traefik", "Gitea", "GitLab"]
+  items: ["Python", "Ansible", "Git", "Jenkins", "NetBox", "REST API", "Docker", "Docker Compose", "Traefik", "Gitea", "GitLab", "DevOps", "NetDevOps", "Data Processing", "Visualization"]
