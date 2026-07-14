@@ -16,7 +16,10 @@
   --flexoki-50:    #F2F0E5;
   --flexoki-paper: #FFFCF0;
 
-  --blue-600:   #205EA6; --blue-400:   #4385BE;
+  --blue-50: #E1ECEB; --blue-100: #C6DDE8; --blue-150: #ABCFE2; --blue-200: #92BFDB;
+  --blue-300: #66A0C8; --blue-400: #4385BE; --blue-500: #3171B2; --blue-600: #205EA6;
+  --blue-700: #1A4F8C; --blue-800: #163B66; --blue-850: #133051; --blue-900: #12253B; --blue-950: #101A24;
+
   --orange-600: #BC5215; --orange-400: #DA702C;
   --green-600:  #66800B; --green-400:  #879A39;
   --red-600:    #AF3029; --red-400:    #D14D41;
@@ -38,9 +41,9 @@
   --bg-soft: var(--flexoki-50);
   --border: var(--flexoki-100);
   --text: var(--flexoki-black);
-  --text-muted: var(--flexoki-600);
-  --text-faint: var(--flexoki-500);
-  --tag-bg: var(--flexoki-50);
+  --text-muted: var(--blue-600);
+  --text-faint: var(--blue-500);
+  --tag-bg: var(--blue-100);
   --tag-text: var(--flexoki-700);
 }
 [data-theme="dark"] {
@@ -48,9 +51,9 @@
   --bg-soft: var(--flexoki-950);
   --border: var(--flexoki-900);
   --text: var(--flexoki-100);
-  --text-muted: var(--flexoki-300);
-  --text-faint: var(--flexoki-500);
-  --tag-bg: var(--flexoki-900);
+  --text-muted: var(--blue-300);
+  --text-faint: var(--blue-500);
+  --tag-bg: var(--blue-900);
   --tag-text: var(--flexoki-200);
 }
 @media (prefers-color-scheme: dark) {
@@ -59,9 +62,9 @@
     --bg-soft: var(--flexoki-950);
     --border: var(--flexoki-900);
     --text: var(--flexoki-100);
-    --text-muted: var(--flexoki-300);
-    --text-faint: var(--flexoki-500);
-    --tag-bg: var(--flexoki-900);
+    --text-muted: var(--blue-300);
+    --text-faint: var(--blue-500);
+    --tag-bg: var(--blue-900);
     --tag-text: var(--flexoki-200);
   }
 }
