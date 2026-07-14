@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Resume"
+title: "Curriculum vitae"
 ---
 {% include hero.html %}
 {% include experience.html %}

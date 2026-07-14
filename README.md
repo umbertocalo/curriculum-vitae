@@ -54,7 +54,7 @@ publish directory `_site`.
 
 ## Roadmap (ordine consigliato)
 
-1. ✅ Homepage / Resume
+1. ✅ Homepage/CV
 2. ✅ Projects
 3. ✅ Certifications
 4. Blog tecnico (`_posts/`, layout `post.html`)
