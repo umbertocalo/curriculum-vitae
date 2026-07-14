@@ -24,6 +24,18 @@
 }
 .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 
+.download-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
+.download-btn:hover { color: var(--accent); border-color: var(--accent); }
+
 .hero p.tagline {
   font-family: var(--font-mono);
   font-size: 0.9rem;
