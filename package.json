@@ -1,0 +1,12 @@
+{
+  "name": "resume-site-pdf",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Genera assets/cv.pdf dalla pagina /cv/ del sito Jekyll buildato, usato solo in CI",
+  "scripts": {
+    "generate:pdf": "node scripts/generate-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

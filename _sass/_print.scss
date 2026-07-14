@@ -1,0 +1,49 @@
+// Regole specifiche per il rendering a stampa/PDF.
+// I margini pagina reali sono gestiti da Puppeteer (page.pdf margin option),
+// qui ci limitiamo a ottimizzare tipografia e densità per stare in 1-2 pagine A4.
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.print-body {
+  font-size: 15.5px;
+}
+
+.print-wrap {
+  max-width: 100%;
+  padding: 0;
+}
+
+// nella pagina di stampa non serve lo spazio verticale pensato per lo scroll web
+.print-wrap h2 {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.print-wrap .entry {
+  margin-bottom: 1.1rem;
+}
+
+.print-wrap .hero p.tagline {
+  margin-top: -0.2rem;
+}
+
+// evita che un'esperienza/progetto venga tagliato a metà tra una pagina e l'altra
+.entry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.print-footer {
+  margin-top: 2rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+}
+
+// i link restano leggibili anche in stampa ma senza sottolineatura invadente
+.print-wrap a { text-decoration: none; }

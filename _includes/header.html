@@ -2,5 +2,8 @@
   <nav>
     <a href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
   </nav>
-  <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">dark</button>
+  <div class="header-actions">
+    <a href="{{ '/assets/cv.pdf' | relative_url }}" class="download-btn" download>↓ pdf</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">dark</button>
+  </div>
 </header>
