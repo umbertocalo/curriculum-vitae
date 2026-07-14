@@ -1,10 +1,9 @@
 // Genera _site/assets/YYYY-MM-DD-UmbertoCalo-CV.pdf e copia come cv.pdf.
 // Va eseguito DOPO `jekyll build` e PRIMA di caricare l'artifact di Pages.
-// Usa Chromium headless via Puppeteer con un server HTTP locale per garantire
-// che CSS, font e asset vengano caricati correttamente.
+// Usa Chromium headless via Puppeteer: nessuna gem Ruby matura fa questo lavoro
+// in modo affidabile oggi, quindi la conversione vive fuori dall'ecosistema Jekyll.
 
 const puppeteer = require("puppeteer");
-const http = require("http");
 const path = require("path");
 const fs = require("fs");
 
@@ -14,37 +13,6 @@ function today() {
   const m = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
   return `${y}-${m}-${day}`;
-}
-
-const MIME = {
-  ".html": "text/html",
-  ".css":  "text/css",
-  ".js":   "application/javascript",
-  ".json": "application/json",
-  ".png":  "image/png",
-  ".jpg":  "image/jpeg",
-  ".svg":  "image/svg+xml",
-  ".woff": "font/woff",
-  ".woff2":"font/woff2",
-  ".ttf":  "font/ttf",
-  ".pdf":  "application/pdf",
-};
-
-function startServer(root) {
-  return new Promise((resolve) => {
-    const server = http.createServer((req, res) => {
-      const url = req.url.split("?")[0];
-      const filePath = path.join(root, url === "/" ? "/index.html" : url);
-      if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
-        res.writeHead(404);
-        return res.end("Not found");
-      }
-      const ext = path.extname(filePath);
-      res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream" });
-      fs.createReadStream(filePath).pipe(res);
-    });
-    server.listen(0, "127.0.0.1", () => resolve(server));
-  });
 }
 
 (async () => {
@@ -62,11 +30,6 @@ function startServer(root) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  // Avvia server HTTP locale per servire _site/
-  const server = await startServer(sitePath);
-  const port = server.address().port;
-  console.log(`Server HTTP su http://127.0.0.1:${port}`);
-
   const browser = await puppeteer.launch({
     headless: "new",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -75,7 +38,7 @@ function startServer(root) {
   try {
     const page = await browser.newPage();
     await page.emulateMediaType("screen");
-    await page.goto(`http://127.0.0.1:${port}/cv/`, { waitUntil: "networkidle0" });
+    await page.goto("file://" + cvHtmlPath, { waitUntil: "networkidle0" });
 
     // Forza tema light e accent blue
     await page.evaluate(() => {
@@ -83,7 +46,7 @@ function startServer(root) {
       document.documentElement.setAttribute("data-accent", "blue");
     });
 
-    // Inietta stile print: nasconde header/footer, previene page-break, regola spaziature
+    // Inietta stile print: copre header, footer, tag-list, tema e paginazione
     await page.evaluate(() => {
       const style = document.createElement("style");
       style.textContent = `
@@ -149,6 +112,5 @@ function startServer(root) {
     console.log(`PDF generato: ${outputPath}`);
   } finally {
     await browser.close();
-    server.close();
   }
 })();
