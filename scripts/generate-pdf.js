@@ -101,7 +101,10 @@ function today() {
       path: datedOutputPath,
       format: "A4",
       printBackground: true,
-      margin: { top: "16mm", bottom: "16mm", left: "16mm", right: "16mm" },
+      // margine a 0: lo spazio dal bordo è gestito da .print-wrap { padding: 16mm }
+      // in CSS, non da qui, altrimenti il margine risulterebbe sempre carta bianca
+      // pura non colorabile e lo sfondo Flexoki non arriverebbe a bordo pagina.
+      margin: { top: "0mm", bottom: "0mm", left: "0mm", right: "0mm" },
     });
 
     fs.copyFileSync(datedOutputPath, stableOutputPath);
