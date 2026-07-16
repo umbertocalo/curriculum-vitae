@@ -1,29 +1,48 @@
 // Regole specifiche per il rendering a stampa/PDF.
-// Il margine NON è più delegato a Puppeteer (page.pdf margin option): quel margine
-// è sempre carta bianca pura, lo sfondo pagina non può colorarlo. Per avere lo sfondo
-// Flexoki a piena pagina (full-bleed), il margine visivo è ora padding CSS su .print-wrap,
-// che invece eredita il background di body. Puppeteer genera il PDF con margin: 0.
+//
+// NOTA su una scelta di design cambiata rispetto alla versione precedente:
+// avevamo provato lo sfondo Flexoki full-bleed (fino al bordo fisico pagina)
+// usando @page { margin: 0 } + padding CSS su .print-wrap. Il problema: un
+// padding su un unico box che scorre su più pagine si applica solo a
+// inizio/fine dell'INTERO flusso, non su ogni pagina — risultato: testo
+// troppo in alto/basso sulle pagine 2, 3, ecc. (bug segnalato).
+//
+// Abbiamo poi provato un layer position:fixed per il colore di sfondo,
+// ipotizzando che si ripetesse su ogni pagina come vuole la spec CSS Paged
+// Media. Verificato con Chromium reale: NON funziona — il motore di stampa
+// di Chromium non disegna elementi fixed dentro il gutter del margine su
+// ogni pagina (limite noto dell'engine, non un nostro errore di codice).
+//
+// Quindi: @page margin reale (si ripete correttamente su ogni pagina,
+// testato pixel per pixel), lo sfondo Flexoki resta pieno dentro l'area di
+// contenuto di ogni pagina, il margine vero resta bianco — esattamente
+// come qualsiasi documento stampato reale (il margine non è mai "stampato",
+// per definizione).
 
 @page {
   size: A4;
-  margin: 0;
+  margin: 16mm;
 }
 
 .print-body {
   font-size: 15.5px;
-  min-height: 297mm; // forza lo sfondo a coprire l'intera prima pagina anche se il CV è corto
 }
 
 .print-wrap {
   max-width: 100%;
-  padding: 16mm;
-  box-sizing: border-box;
+  padding: 0;
 }
 
-// nella pagina di stampa non serve lo spazio verticale pensato per lo scroll web
 .print-wrap h2 {
   margin-top: 1.5rem;
   font-size: 0.85rem;
+}
+
+// evita che un titolo di sezione (es. "Education") resti da solo in fondo
+// pagina, separato dal contenuto che lo segue sulla pagina successiva
+.print-wrap h2 {
+  break-after: avoid;
+  page-break-after: avoid;
 }
 
 .print-wrap .entry {
@@ -34,8 +53,17 @@
   margin-top: -0.2rem;
 }
 
-// evita che un'esperienza/progetto venga tagliato a metà tra una pagina e l'altra
+// coerente con la struttura _data/*.yml: un'esperienza (company + roles),
+// un progetto o una certificazione (vendor + items) non si spezzano a metà
 .entry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+// coerente con l'annidamento company > roles: un singolo ruolo dentro una
+// company con più roles (es. NTT Data) non si spezza a metà nemmeno lui,
+// anche se la company nel suo complesso può interrompersi tra un ruolo e l'altro
+.role {
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -49,5 +77,4 @@
   color: var(--text-faint);
 }
 
-// i link restano leggibili anche in stampa ma senza sottolineatura invadente
 .print-wrap a { text-decoration: none; }
