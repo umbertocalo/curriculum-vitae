@@ -1,6 +1,8 @@
 // Regole specifiche per il rendering a stampa/PDF.
-// I margini pagina reali sono gestiti da Puppeteer (page.pdf margin option),
-// qui ci limitiamo a ottimizzare tipografia e densità per stare in 1-2 pagine A4.
+// Il margine NON è più delegato a Puppeteer (page.pdf margin option): quel margine
+// è sempre carta bianca pura, lo sfondo pagina non può colorarlo. Per avere lo sfondo
+// Flexoki a piena pagina (full-bleed), il margine visivo è ora padding CSS su .print-wrap,
+// che invece eredita il background di body. Puppeteer genera il PDF con margin: 0.
 
 @page {
   size: A4;
@@ -9,11 +11,13 @@
 
 .print-body {
   font-size: 15.5px;
+  min-height: 297mm; // forza lo sfondo a coprire l'intera prima pagina anche se il CV è corto
 }
 
 .print-wrap {
   max-width: 100%;
-  padding: 0;
+  padding: 16mm;
+  box-sizing: border-box;
 }
 
 // nella pagina di stampa non serve lo spazio verticale pensato per lo scroll web
