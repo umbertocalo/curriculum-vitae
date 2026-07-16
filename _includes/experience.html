@@ -4,11 +4,13 @@
     <h3 class="entry-company">{{ job.company }}</h3>
     <p class="entry-sub">{{ job.location }}</p>
     {% for role in job.roles %}
-      <div class="entry-head">
-        <strong>{{ role.title }}</strong>
-        <time class="meta">{{ role.period }}</time>
+      <div class="role">
+        <div class="entry-head">
+          <strong>{{ role.title }}</strong>
+          <time class="meta">{{ role.period }}</time>
+        </div>
+        {{ role.description | markdownify }}
       </div>
-      {{ role.description | markdownify }}
     {% endfor %}
   </div>
 {% endfor %}
