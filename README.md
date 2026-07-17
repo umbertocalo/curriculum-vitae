@@ -1,74 +1,161 @@
-# resume-site
+# 📄 CV / Personal Portfolio
 
-Tema Jekyll custom per CV/portfolio personale. Ispirato alla tipografia e alla
-palette di [stephango.com](https://stephango.com) (Flexoki, MIT) e alla
-struttura "homepage = curriculum" di [davidepucci.it/resume](https://davidepucci.it/resume/).
+A **minimalist and responsive** website to manage and showcase my CV in an elegant way. A personal project created with the goal of making it easier to manage and update my Curriculum Vitae.
 
-## Filosofia
+**Live at**: [umbertocalo.dpdns.org](https://umbertocalo.dpdns.org)
 
-- **Contenuti in `_data/*.yml`**, mai nell'HTML: aggiorni il CV senza toccare i template.
-- **Template Liquid minimi e modulari**: ogni sezione è un include indipendente.
-- **SCSS diviso per responsabilità**, sotto le 500 righe totali.
-- **Una sola dipendenza JS**: il toggle dark/light (nessun framework).
-- Nessuna card, nessun box: solo tipografia e whitespace.
+## 🎨 Inspiration and Credits
 
-## Setup locale
+- **Structural Idea**: inspired by [davidepucci.it](https://davidepucci.it/resume/) ([@streambinder](https://github.com/streambinder)) — homepage = curriculum
+- **Design and Color Palette**: based on [stephango.com](https://stephango.com) ([@kepano](https://github.com/kepano)) and the **Flexoki** palette (MIT License)
+- **Development**: built with the help of **Claude AI** for the web design aspects, given my limited background in this area
 
-Richiede Ruby ≥ 3.1.
+## 🏗️ Repository Structure
 
-```bash
-bundle install
-bundle exec jekyll serve
-# apri http://localhost:4000
+### Tech Stack
+
+- **Framework**: [Jekyll](https://jekyllrb.com/) 4.3+ (static site generator with Ruby)
+- **Language**: SCSS for styles
+- **Hosting**: [Cloudflare Pages](https://pages.cloudflare.com/) (free)
+- **PDF Generation**: Node.js (Puppeteer) to generate CV as PDF
+- **Domain**: [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain) (free .dpdns.org domain)
+
+### File Structure
+
+```
+.
+├── _config.yml              # Jekyll configuration (title, URL, theme)
+├── _data/                   # Content in YAML format (separated from logic)
+│   ├── profile.yml          # Personal info (name, role, bio, contacts)
+│   ├── skills.yml           # Skills grouped by area
+│   ├── experience.yml       # Work experience
+│   ├── projects.yml         # Personal/professional projects
+│   ├── certifications.yml   # Certifications
+│   └── education.yml        # Education and training
+├── _layouts/                # HTML templates (page layouts)
+├── _sass/                   # Modular SCSS styles
+│   ├── _variables.scss      # Color variables and accents
+│   ├── _typography.scss     # Typography styles
+│   └── ...other files
+├── _includes/               # Reusable Liquid components
+├── assets/                  # Compiled CSS, images, PDF
+├── scripts/                 # Node.js scripts (PDF generation)
+├── .github/workflows/       # GitHub Actions automation
+├── Gemfile                  # Ruby dependencies
+├── package.json             # Node.js dependencies
+└── index.md                 # Main homepage
 ```
 
-## Aggiornare i contenuti
+### Design Philosophy
 
-Tutto vive in `_data/`:
+- ✅ **Content separated from logic**: all CV content lives in `_data/*.yml`, updatable without touching HTML
+- ✅ **Minimal Liquid templates**: each section is an independent, modular `include`
+- ✅ **Organized SCSS**: styles divided by responsibility, under 500 lines total
+- ✅ **Minimal JavaScript**: only dark/light toggle with localStorage
+- ✅ **No heavy frameworks**: no Bootstrap, Tailwind, or bloated dependencies
+- ✅ **Design-first**: typography and whitespace at the center
 
-| File | Contenuto |
-| --- | --- |
-| `profile.yml` | nome, ruolo, bio, contatti |
-| `skills.yml` | competenze raggruppate per area |
-| `experience.yml` | esperienze lavorative (roles annidati per azienda) |
-| `projects.yml` | progetti, uno per voce |
-| `certifications.yml` | certificazioni raggruppate per vendor |
-| `education.yml` | formazione |
+## ⚡ Local Setup
 
-Le `description` supportano Markdown (usa `-` per liste puntate reali).
+### Requirements
+- Ruby ≥ 3.1
+- Node.js ≥ 16 (only if using PDF generation)
 
-## Personalizzare tema e colore
+### Installation
 
-- Dark/light: bottone in header, oppure tasto `d` da tastiera. Persistito in `localStorage`.
-- Accent color: in `_config.yml`, chiave `default_accent` → `blue | orange | green | red`.
-  Per aggiungerne uno nuovo, basta un blocco in `_sass/_variables.scss`.
+```bash
+# Clone the repo
+git clone https://github.com/umbertocalo/pvt-curriculum-vitae.git
+cd pvt-curriculum-vitae
 
-## Deploy
+# Install Ruby dependencies
+bundle install
 
-Incluso un workflow GitHub Actions (`.github/workflows/deploy.yml`) che builda
-e pubblica su GitHub Pages ad ogni push su `main`. Attivalo da:
-`Settings → Pages → Source: GitHub Actions`.
+# Start the local server
+bundle exec jekyll serve
 
-In alternativa, funziona anche su Netlify/Cloudflare Pages: build command `bundle exec jekyll build`,
-publish directory `_site`.
+# Open http://localhost:4000
+```
 
-## Roadmap (ordine consigliato)
+## 📝 Updating Content
 
-1. ✅ Homepage/CV
-2. ✅ Projects
-3. ✅ Certifications
-4. Blog tecnico (`_posts/`, layout `post.html`)
-5. Notes stile digital garden (`notes/`, eventuali backlink)
-6. Search
-7. Tag pages
-8. Feed RSS/Atom (`jekyll-feed` già incluso nel Gemfile)
-9. Sitemap (`jekyll-sitemap` già incluso)
-10. SEO tag (`jekyll-seo-tag` già incluso)
-11. Mermaid per diagrammi
-12. PrismJS per syntax highlighting nel blog
-13. KaTeX se serve notazione matematica
+All content lives in `_data/`:
 
-## Licenza contenuti terzi
+| File | Content |
+|------|---------|
+| `profile.yml` | Name, role, bio, social links and contacts |
+| `skills.yml` | Skills grouped by category |
+| `experience.yml` | Work experience (with nested roles per company) |
+| `projects.yml` | Projects, one per entry |
+| `certifications.yml` | Certifications grouped by vendor |
+| `education.yml` | Education and degrees |
 
-La palette colore Flexoki è di Steph Ango, rilasciata con licenza MIT
-(<https://github.com/kepano/flexoki>). Attribuzione mantenuta nei commenti SCSS.
+**Note**: `description` fields support **Markdown** (use `-` for bullet points).
+
+### Example: Update your profile
+
+Edit `_data/profile.yml`:
+
+```yaml
+name: "Umberto Calò"
+role: "Full Stack Developer"
+bio: |
+  Passionate about web design, Python and open source.
+  I love learning new technologies...
+
+contact:
+  email: "hello@umbertocalo.com"
+  github: "https://github.com/umbertocalo"
+  linkedin: "https://linkedin.com/in/umbertocalo"
+```
+
+## 🎨 Customize Theme and Color
+
+### Dark/Light Toggle
+- Use the **button in the header**
+- Or press the **`d`** key on your keyboard
+- Your preference is saved in `localStorage`
+
+### Change the accent color
+Edit `_config.yml`:
+
+```yaml
+default_accent: "blue"  # blue | orange | green | red
+```
+
+**To add a new color**, add a block in `_sass/_variables.scss`.
+
+## 🚀 Deploy
+
+The site is built and deployed to **Cloudflare Pages** with:
+
+```bash
+jekyll build && npm run generate:pdf
+```
+
+This command:
+1. Builds the static Jekyll site
+2. Generates the PDF version of the CV using Puppeteer
+3. Outputs everything to `_site/` for Cloudflare Pages to serve
+
+## 📄 Generate PDF
+
+I use Puppeteer to convert the site to PDF:
+
+```bash
+npm install
+npm run generate:pdf
+```
+
+Generates `assets/cv.pdf` from the `/cv/` page.
+
+## 📜 License and Attribution
+
+- **Flexoki color palette**: © [Steph Ango](https://github.com/kepano/flexoki) — MIT License
+- **Structure and philosophy**: inspired by [Davide Pucci](https://davidepucci.it)
+- **Free domain**: [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
+- **Content**: © 2026 Umberto Calò
+
+---
+
+**Made with ❤️ and the help of Claude AI**
