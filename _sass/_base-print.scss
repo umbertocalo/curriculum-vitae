@@ -26,6 +26,9 @@
 
 .print-body {
   font-size: 15.5px;
+  // solo lo sfondo pagina torna bianco puro; --accent, --border, --tag-bg,
+  // --text-faint ecc. restano quelli di [data-theme="light"], invariati
+  --bg: #FFFFFF;
 }
 
 .print-wrap {
@@ -53,16 +56,35 @@
   margin-top: -0.2rem;
 }
 
-// coerente con la struttura _data/*.yml: un'esperienza (company + roles),
-// un progetto o una certificazione (vendor + items) non si spezzano a metà
+// coerente con la struttura _data/*.yml: un progetto o una certificazione
+// (vendor + items) non si spezzano a metà
 .entry {
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
-// coerente con l'annidamento company > roles: un singolo ruolo dentro una
-// company con più roles (es. NTT Data) non si spezza a metà nemmeno lui,
-// anche se la company nel suo complesso può interrompersi tra un ruolo e l'altro
+// le company nell'esperienza possono contenere più ruoli lunghi (es. NTT Data
+// con 3 ruoli): impedire SEMPRE la spezzatura dell'intera company, come sopra
+// per .entry generico, forzava l'intero blocco sulla pagina successiva se non
+// entrava nello spazio residuo — risultato: hero+bio soli in pagina 1, tutte
+// le esperienze spostate in pagina 2 (bug segnalato). Qui permettiamo la
+// spezzatura TRA un ruolo e l'altro; ogni singolo ruolo resta comunque
+// intero grazie a .role qui sotto.
+.experience-entry {
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+// il nome della company non deve restare orfano in fondo pagina, separato
+// dal primo ruolo che lo segue sulla pagina successiva
+.entry-company {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+// coerente con l'annidamento company > roles: un singolo ruolo non si
+// spezza mai a metà, anche se la company nel suo complesso può interrompersi
+// tra un ruolo e l'altro
 .role {
   break-inside: avoid;
   page-break-inside: avoid;
