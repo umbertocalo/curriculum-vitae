@@ -2,7 +2,7 @@
 
 A **minimalist and responsive** website to manage and showcase my CV in an elegant way. A personal project created with the goal of making it easier to manage and update my Curriculum Vitae.
 
-**Live at**: [umbertocalo.dpdns.org](https://umbertocalo.dpdns.org)
+**Live at**: [umbical.dpdns.org](https://umbical.dpdns.org)
 
 ## 🎨 Inspiration and Credits
 
