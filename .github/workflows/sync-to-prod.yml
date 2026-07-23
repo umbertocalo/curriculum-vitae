@@ -19,4 +19,4 @@ jobs:
           REPO_TO_REPO_PAT: ${{ secrets.repo_to_repo_PAT }}
         run: |
           git remote add prod https://umbertocalo:${REPO_TO_REPO_PAT}@github.com/umbertocalo/curriculum-vitae.git
-          git push prod main
+          git -c "http.https://github.com/.extraheader=" push prod main
