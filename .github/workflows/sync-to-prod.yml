@@ -27,4 +27,4 @@ jobs:
           git add -A
           git commit -m "chore: promote dev to prod"
           git remote add prod https://umbertocalo:${REPO_TO_REPO_PAT}@github.com/umbertocalo/curriculum-vitae.git
-          git -c "http.https://github.com/.extraheader=" push prod main
+          git -c "http.https://github.com/.extraheader=" push prod main --force
