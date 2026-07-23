@@ -3,6 +3,7 @@
     <a href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
   </nav>
   <div class="header-actions">
+    {% include dev-badge.html %}
     <a href="{{ '/assets/cv.pdf' | relative_url }}" class="download-btn" id="download-cv" download="Umberto-Calo-CV.pdf">↓ pdf</a>
     <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">dark</button>
   </div>
